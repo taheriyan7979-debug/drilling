@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -50,8 +50,8 @@ namespace drilling
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.Filter = "فایل‌های CSV|*.csv|همه فایل‌ها|*.*";
-                openFileDialog.Title = "انتخاب فایل CSV";
+                openFileDialog.Filter = "فایل‌های داده|*.csv;*.xlsx;*.xls|CSV (*.csv)|*.csv|Excel (*.xlsx)|*.xlsx|Excel 97-2003 (*.xls)|*.xls|همه فایل‌ها|*.*";
+                openFileDialog.Title = "انتخاب فایل داده (CSV/Excel)";
                 openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -62,7 +62,7 @@ namespace drilling
                         btnImportCsv.Enabled = false;
                         lblStatus.Text = "در حال خواندن فایل...";
 
-                        var records = _csvService.ImportFromCsv(openFileDialog.FileName);
+                        var records = _csvService.ImportFromFile(openFileDialog.FileName);
 
                         if (records.Count > 0)
                         {

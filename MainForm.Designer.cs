@@ -1,4 +1,4 @@
-﻿namespace drilling
+namespace drilling
 {
     partial class MainForm
     {
@@ -60,7 +60,7 @@
             this.btnImportCsv.Name = "btnImportCsv";
             this.btnImportCsv.Size = new System.Drawing.Size(150, 35);
             this.btnImportCsv.TabIndex = 1;
-            this.btnImportCsv.Text = "📁 دریافت از CSV";
+            this.btnImportCsv.Text = "📁 دریافت فایل (CSV/Excel)";
             this.btnImportCsv.UseVisualStyleBackColor = false;
             this.btnImportCsv.Click += new System.EventHandler(this.BtnImportCsv_Click);
             // 
